@@ -92,3 +92,8 @@ test: $(TARGET_FILE)
 	@# verify that the assembled shell script can be interpreted by the local shell
 	@if echo "list" | "$(abspath $(TARGET_FILE))" | grep -qw "uptime"; then \
 		echo "Test OK"; else echo "Test FAILED"; false; fi
+
+push:
+	scp muninlite kodi1:bin/
+	scp muninlite kodi2:bin/
+	scp muninlite kodi3:bin/
